@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Muestra de Series</h1>
+    <h1 class="text-center">Muestra de Series</h1>
     <series :informacion="series"></series>
   </div>
 </template>
@@ -13,23 +13,22 @@ export default {
   name: "App",
   data() {
     return {
-      series: []
+      series: [],
     };
   },
   mounted() {
     axios
       .get("http://api.tvmaze.com/shows")
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.series = response.data;
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   },
   components: {
-    Series
-  }
+    Series,
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

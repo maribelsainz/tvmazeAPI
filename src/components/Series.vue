@@ -14,9 +14,15 @@
               class="card-text"
               v-html="$options.filters.recorte(serie.summary)"
             ></p>
-            <a :href="serie.url" target="_blank" class="btn btn-primary"
-              >Ver más</a
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#staticBackdrop"
             >
+              Ver más
+            </button>
           </div>
         </div>
       </div>
