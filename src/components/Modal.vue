@@ -3,7 +3,7 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="staticBackdrop"
+      :id="'ventana' + index"
       data-backdrop="static"
       data-keyboard="false"
       tabindex="-1"
@@ -14,7 +14,12 @@
       <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <div>
+              <img :src="imagen" alt="imagen" />
+            </div>
+            <h5 class="modal-title" id="staticBackdropLabel" v-text="nombre">
+              Modal title
+            </h5>
             <button
               type="button"
               class="close"
@@ -25,7 +30,7 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <p v-html="descrip"></p>
           </div>
           <div class="modal-footer">
             <button
@@ -44,6 +49,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["imagen", "descrip", "nombre", "index"],
+};
 </script>
+
 <style></style>

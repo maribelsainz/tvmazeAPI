@@ -19,7 +19,7 @@
               type="button"
               class="btn btn-primary"
               data-toggle="modal"
-              data-target="#staticBackdrop"
+              :data-target="'#ventana' + index"
             >
               Ver más
             </button>
@@ -27,17 +27,12 @@
         </div>
       </div>
     </div>
-    <modal></modal>
   </div>
 </template>
 
 <script>
-import Modal from "./Modal.vue";
 export default {
   name: "Series",
-  components: {
-    Modal,
-  },
   props: {
     informacion: {
       type: Array,
